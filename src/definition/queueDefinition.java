@@ -1,8 +1,6 @@
 package definition;
 import adt.queueAdt;
 
-import java.util.NoSuchElementException;
-
 public class queueDefinition<E> implements queueAdt<E> {
 
     private Node<E> front;
@@ -27,7 +25,7 @@ public class queueDefinition<E> implements queueAdt<E> {
 
     @Override
     public E poll() {
-
+        return null;
     }
 
     @Override
