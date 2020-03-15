@@ -1,15 +1,33 @@
 package definition;
 import adt.queueAdt;
 
+import java.util.NoSuchElementException;
+
 public class queueDefinition<E> implements queueAdt<E> {
+
+    private Node<E> front;
+    private Node<E> rear;
+    private int size;
+
     @Override
     public boolean add(E item) {
-        return false;
+
+        if (front == null) {
+            rear = new Node<>(item);
+            front = rear;
+        }
+
+        else {
+            rear.next = new Node<>(item);
+            rear = rear.next;
+        }
+        size++;
+        return true;
     }
 
     @Override
     public E poll() {
-        return null;
+
     }
 
     @Override
