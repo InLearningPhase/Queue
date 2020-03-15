@@ -1,6 +1,8 @@
 package definition;
 import adt.queueAdt;
 
+import java.util.NoSuchElementException;
+
 public class queueDefinition<E> implements queueAdt<E> {
 
     private Node<E> front;
@@ -25,7 +27,18 @@ public class queueDefinition<E> implements queueAdt<E> {
 
     @Override
     public E poll() {
-        return null;
+
+        if (front == null) {
+
+            throw new NoSuchElementException("Queue is Empty!");
+        }
+        else {
+
+            E temp = front.getData();
+            front = front.next;
+            size--;
+            return temp;
+        }
     }
 
     @Override
