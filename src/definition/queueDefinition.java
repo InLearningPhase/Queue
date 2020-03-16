@@ -66,6 +66,19 @@ public class queueDefinition<E> implements queueAdt<E> {
         return null;
     }
 
+    @Override
+    public String toString() {
+
+        StringBuilder stringBuilder = new StringBuilder("*");
+        Node<E> temp = front;
+        for (int i = 0; i < size; i++) {
+            stringBuilder.append(temp.getData());
+            stringBuilder.append(i < size - 1 ? "-->" : "");
+            temp = temp.getNext();
+        }
+        return stringBuilder.toString();
+    }
+
     private class Node<E> {
         private E data;
         private Node<E> next;
