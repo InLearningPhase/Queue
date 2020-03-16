@@ -30,7 +30,7 @@ public class queueDefinition<E> implements queueAdt<E> {
 
         if (front == null) {
 
-            throw new NoSuchElementException("Queue is Empty!");
+            return null;
         }
         else {
 
@@ -43,7 +43,17 @@ public class queueDefinition<E> implements queueAdt<E> {
 
     @Override
     public E remove() {
-        return null;
+
+        if (front == null) {
+
+            throw new NoSuchElementException("Queue is Empty!");
+        }
+        else {
+            E temp = front.getData();
+            front = front.next;
+            size--;
+            return temp;
+        }
     }
 
     @Override
