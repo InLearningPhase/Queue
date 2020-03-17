@@ -69,7 +69,13 @@ public class queueDefinition<E> implements queueAdt<E> {
 
     @Override
     public E element() {
-        return null;
+
+        if (front == null) {
+            throw new NoSuchElementException("Queue is empty!");
+        }
+        else {
+            return front.getData();
+        }
     }
 
     @Override
