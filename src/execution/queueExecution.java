@@ -8,5 +8,9 @@ public class queueExecution {
             execution.add(i);
         }
         System.out.println(execution.toString());
+        execution.poll();
+        System.out.println(execution.toString());
+        execution.remove();
+        System.out.println(execution.toString());
     }
 }

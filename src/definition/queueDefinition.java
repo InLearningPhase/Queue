@@ -58,7 +58,13 @@ public class queueDefinition<E> implements queueAdt<E> {
 
     @Override
     public E peek() {
-        return null;
+
+        if (front == null) {
+            return null;
+        }
+        else {
+            return front.getData();
+        }
     }
 
     @Override
